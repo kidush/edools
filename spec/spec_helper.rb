@@ -1,6 +1,6 @@
 require 'rspec'
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'edools_ruby'
+require 'edools'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
