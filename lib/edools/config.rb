@@ -4,7 +4,11 @@ module Edools
       @api_key = api_key
       @base_uri = base_uri
 
-      @conn = Faraday.new(url: base_uri, headers: {'Authentication': "Token token=#{api_key}"}) 
+      @conn = Faraday.new(url: base_uri, headers: {'Authorization': "Token token=#{api_key}"}) do |conn|
+        conn.response :hashify
+
+        conn.adapter Faraday.default_adapter
+      end
     end
 
     attr_accessor :api_key, :base_uri

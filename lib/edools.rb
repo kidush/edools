@@ -2,7 +2,9 @@ require 'json'
 require 'faraday'
 
 require 'edools/version'
+require 'edools/middlewares/hash_response'
 require 'edools/config'
+require 'edools/api_base_request'
 require 'edools/school'
 
 module Edools

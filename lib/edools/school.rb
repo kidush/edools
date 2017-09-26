@@ -1,18 +1,26 @@
 module Edools
-  module School
+  class School
+    include Edools::ApiBaseRequest
 
-    def self.create(school = {})
-      @conn = Faraday.new(url: @config.base_uri)
-      params = {}
-      params.merge(school: school)
+    def self.create(name, email, password)
+      response = conn.post '/schools/wizard', { school: {name: name, email: email, password: password} }
 
-      resp = @conn.post do |req|
-        req.url '/schools'
-        req.headers['Authentication'] = "Token token=#{@config.api_key}"
-        req.body = school.to_json
+      response.body
+    end
+
+    def self.update(id, params = {})
+      response = conn.put do |req|
+        req.url "/schools/#{id}"
+        req.body = {school: params}
       end
 
-      resp
+      response.body
     end
+
+    def self.all
+      response = conn.get '/schools'
+      response.body
+    end
+
   end
 end
