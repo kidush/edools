@@ -34,7 +34,7 @@ Edools.configure do |config|
 end
 ```
 
-**Remember:** You have to change `<YOUR_API_KEY>` and `<BASE_URI>` with your own credentials and custom subdomain based on Edools API. It's important for you to know that `api_key` is only for create the a school. As soon as you've created a new school you will receive in your body response an admin credentials token with this new token you can Update your school and handle courses, products and students.
+**Remember:** You have to change `<YOUR_API_KEY>` and `<BASE_URI>` with your own credentials and custom subdomain based on Edools API. It's important for you to know that `api_key` is only for create the school. As soon as you've created a new school you will receive in **response** an admin credentials key. This new token you will can Update your school, handle courses, products and students.
 
 ### Creating a new School:
 
@@ -52,7 +52,7 @@ it will return a **response** with your credentials and some others data about s
 	"name" => "teste escola 2"
   },
    
-  "library" => {"id"=>711}, 
+  "library" => { "id" => 711 }, 
   
   "organization" => {
     "id" => 705, 
@@ -60,14 +60,14 @@ it will return a **response** with your credentials and some others data about s
   }, 
   
   "admin" => { 
-    "id"=>588449, 
+    "id" => 588449, 
     "full_name" => "Nome da Escola", 
     "email" => "email@escola.com",       
-    "credentials" => "0fa0b3fc2e9ca9a09d9db5b584060a77:46e69d7c798636a5776921f53a9044fc", 
-    "role_id"=>9975
+    "credentials" => "<ADMIN_KEY_COMES_HERE>", 
+    "role_id" => 9975
   }, 
   
-  "forum"=>{"id"=>711}
+  "forum" => { "id" => 711 }
 }
 ```
 
