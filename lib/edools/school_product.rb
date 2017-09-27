@@ -1,5 +1,5 @@
 module Edools
-  class Product
+  class SchoolProduct
     include Edools::ApiBaseRequest
 
     def self.create(params = {})
