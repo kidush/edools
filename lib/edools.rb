@@ -7,6 +7,7 @@ require 'edools/middlewares/choose_api_key'
 require 'edools/config'
 require 'edools/api_base_request'
 require 'edools/school'
+require 'edools/course'
 
 module Edools
   class << self

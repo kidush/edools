@@ -4,8 +4,8 @@ module Edools
 
     def self.create(name, email, password)
       response = conn.post '/schools/wizard', { school: {name: name, email: email, password: password} }
-
-      Edools.config.admin_key = response.body["admin"]["credentials"]
+      
+      Edools.config.admin_key = response.body["admin"]["credentials"] if response.status == 201 
 
       response.body
     end
