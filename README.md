@@ -36,6 +36,8 @@ end
 
 **Remember:** You have to change `<YOUR_API_KEY>` and `<BASE_URI>` with your own credentials and custom subdomain based on Edools API. It's important for you to know that `api_key` is only for create the school. As soon as you've created a new school you will receive in **response** an admin credentials key. This new token you will can Update your school, handle courses, products and students.
 
+## School
+
 ### Creating a new School:
 
 ```Ruby
@@ -87,6 +89,7 @@ Edools::School.update(id, { name: 'my update school name', subdomain: 'my-school
 
 To know more about the School endpoint and params access the [API Documentation](http://docs.edools.com/api/V1/SchoolsController.html).
 
+## Courses
 
 ### Creating a new Course
 
@@ -106,6 +109,40 @@ Edools::Course.all
 
 To know more about the Course endpoint just access the [API Documentation](http://docs.edools.com/api/V1/CoursesController.html).
 
+## School Products
+
+### Creating a new product
+
+```Ruby
+Edools::SchoolProduct.create({title: 'My Product'})
+```
+
+### Getting products
+
+```Ruby
+Edools::SchoolProduct.all
+```
+
+To know more about the SchoolProducts endpoint just access the [API Documentation](http://docs.edools.com/api/V1/SchoolProductsController.html).
+
+
+## Invitation
+
+### Inviting a student
+
+```Ruby
+Edools::Invitation.create(
+  first_name: 'My name', 
+  last_name: 'Last name', 
+  email: '', 
+  password: '', 
+  password_confirmation: '' 
+)
+```
+To know more about the Invitations endpoint just access the [API Documentation](http://docs.edools.com/api/V1/InvitationsController.html).
+
+## Students
+
 ### Getting all Students from school
 
 ```Ruby
@@ -117,6 +154,8 @@ Edools::Student.all
 ```Ruby
 Edools::Student.all(school_product_id: 43343)
 ```
+
+To know more about the Student endpoint just access the [API Documentation](http://docs.edools.com/api/V1/UsersController.html).
 
 
 ## Contributing
