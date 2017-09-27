@@ -3,7 +3,7 @@ module Edools
     class HashResponse < Faraday::Middleware
       def call(environment)
         @app.call(environment).on_complete do |env|
-          env[:body] = JSON.parse(env[:body])
+          env[:body] = env[:body].empty? ? env[:status] : JSON.parse(env[:body])
         end
       end
     end

@@ -1,15 +1,9 @@
-# Edools::Ruby
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/edools/ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edools-ruby'
+gem 'edools'
 ```
 
 And then execute:
@@ -18,11 +12,64 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install edools-ruby
+    $ gem install edools
 
 ## Usage
 
-TODO: Write usage instructions here
+You have to set your `api_key` and your `base_uri` to access the Edools API.
+There are two ways to use the configure method:
+
+The first one:
+
+```Ruby
+Edools.configure('<YOUR_API_KEY>', '<BASE_URI>')
+```
+
+or you can use:
+
+```Ruby
+Edools.configure do |config|
+  config.api_key = '<YOUR_API_KEY>'
+  config.base_uri = '<BASE_URI>'
+end
+```
+
+**Remember:** You have to change `<YOUR_API_KEY>` and `<BASE_URI>` with your own credentials and custom subdomain based on Edools API. It's important for you to know that `api_key` is only for create the a school. As soon as you've created a new school you will receive in your body response an admin credentials token with this new token you can Update your school and handle courses, products and students.
+
+### Creating a new School:
+
+```Ruby
+Edools::School.create(name, email, password)
+```
+
+it will return a **response** with your credentials and some others data about school you've created:
+
+```
+{ 
+  "school"=> {
+	"id" => 711, 
+	"subdomain" => "teste-escola2", 
+	"name" => "teste escola 2"
+  },
+   
+  "library" => {"id"=>711}, 
+  
+  "organization" => {
+    "id" => 705, 
+    "name" => "Nome da Escola"
+  }, 
+  
+  "admin" => { 
+    "id"=>588449, 
+    "full_name" => "Nome da Escola", 
+    "email" => "email@escola.com",       
+    "credentials" => "0fa0b3fc2e9ca9a09d9db5b584060a77:46e69d7c798636a5776921f53a9044fc", 
+    "role_id"=>9975
+  }, 
+  
+  "forum"=>{"id"=>711}
+}
+```
 
 ## Development
 
@@ -32,4 +79,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/edools-ruby.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kidush/edools_ruby.
