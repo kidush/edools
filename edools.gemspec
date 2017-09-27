@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "A client for edools API"
   spec.description   = "A client in ruby to access Edools API"
-  spec.homepage      = "https://github.com/kidush/edools-ruby"
+  spec.homepage      = "https://github.com/kidush/edools_ruby"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -28,4 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.6"
 
   spec.license = 'MIT'
+
+  spec.required_ruby_version = '~> 2.0'
 end

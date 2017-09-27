@@ -96,7 +96,7 @@ To create a new course you have the method below:
 Edools::Course.create({name: 'My Course'})
 ```
 
-### Getting all Courses from your school
+### Getting all Courses from school
 
 To get all courses from the school you've already created, just do that:
 
@@ -105,6 +105,18 @@ Edools::Course.all
 ```
 
 To know more about the Course endpoint just access the [API Documentation](http://docs.edools.com/api/V1/CoursesController.html).
+
+### Getting all Students from school
+
+```Ruby
+Edools::Student.all
+```
+
+### Getting all students from School product
+
+```Ruby
+Edools::Student.all(school_product_id: 43343)
+```
 
 
 ## Contributing

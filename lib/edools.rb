@@ -8,6 +8,9 @@ require 'edools/config'
 require 'edools/api_base_request'
 require 'edools/school'
 require 'edools/course'
+require 'edools/student'
+require 'edools/invitation'
+require 'edools/enrollment'
 
 module Edools
   class << self
