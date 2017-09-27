@@ -88,11 +88,24 @@ Edools::School.update(id, { name: 'my update school name', subdomain: 'my-school
 To know more about the School endpoint and params access the [API Documentation](http://docs.edools.com/api/V1/SchoolsController.html).
 
 
-## Development
+### Creating a new Course
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+To create a new course you have the method below:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```Ruby
+Edools::Course.create({name: 'My Course'})
+```
+
+### Getting all Courses from your school
+
+To get all courses from the school you've already created, just do that:
+
+```Ruby
+Edools::Course.all
+```
+
+To know more about the Course endpoint just access the [API Documentation](http://docs.edools.com/api/V1/CoursesController.html).
+
 
 ## Contributing
 
