@@ -71,6 +71,23 @@ it will return a **response** with your credentials and some others data about s
 }
 ```
 
+### Updating a School:
+
+To use the update method you will need your `admin_key`. When you have created a school an `admin_key` has been created and added automatically to your `Edools.config.admin_key`. If you need change the `admin_key`. You will have to set manually the key:
+
+```Ruby
+Edools.config.admin_key = <YOUR_ADMIN_KEY>
+```
+
+After set your `admin_key` you can update the school.
+
+```Ruby
+Edools::School.update(id, { name: 'my update school name', subdomain: 'my-school-subdomain' })
+```
+
+To know more about the School endpoint and params access the [API Documentation](http://docs.edools.com/api/V1/SchoolsController.html).
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
