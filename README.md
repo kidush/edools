@@ -157,7 +157,33 @@ Edools::Student.all(school_product_id: 43343)
 
 To know more about the Student endpoint just access the [API Documentation](http://docs.edools.com/api/V1/UsersController.html).
 
+## Sessions
 
+### Creating a new user session
+
+Disclaimer: To create a session you have to set the api_key and base_uri in Edools.configure method. 
+I plan to set session credential without api_key and base_uri in the future.
+
+```Ruby
+Edools::Session.create(email: 'your-email@domain.com', password: 'your-password', type: 'School', id: 'school-id')
+```
+
+## Media
+
+### Getting a media
+
+```Ruby
+Edools::Media.find(id)
+```
+
+Ps: To getting a media you will need the Session credentials
+
+Disclaimer: To create a session you have to set the api_key and base_uri in Edools.configure method. 
+I plan to set session credential without api_key and base_uri in the future.
+
+```Ruby
+Edools::Session.create(email: 'your-email@domain.com', password: 'your-password', type: 'School', id: 'school-id')
+```
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/kidush/edools_ruby.
