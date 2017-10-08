@@ -12,6 +12,7 @@ require 'edools/school_product'
 require 'edools/student'
 require 'edools/invitation'
 require 'edools/enrollment'
+require 'edools/session'
 
 module Edools
   class << self
