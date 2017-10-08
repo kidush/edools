@@ -2,6 +2,7 @@ require 'json'
 require 'faraday'
 
 require 'edools/version'
+require 'edools/download_csv'
 require 'edools/middlewares/hash_response'
 require 'edools/middlewares/choose_api_key'
 require 'edools/config'

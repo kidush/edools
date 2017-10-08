@@ -1,6 +1,6 @@
 module Edools
   class Config
-    attr_accessor :api_key, :base_uri, :admin_key, :session_key
+    attr_accessor :api_key, :base_uri, :admin_key, :session_key, :media_csv
     attr_reader :conn
 
     def initialize(api_key = nil, base_uri = nil)
