@@ -178,12 +178,6 @@ Edools::Media.find(id)
 
 Ps: To getting a media you will need the Session credentials
 
-Disclaimer: To create a session you have to set the api_key and base_uri in Edools.configure method. 
-I plan to set session credential without api_key and base_uri in the future.
-
-```Ruby
-Edools::Session.create(email: 'your-email@domain.com', password: 'your-password', type: 'School', id: 'school-id')
-```
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/kidush/edools_ruby.
