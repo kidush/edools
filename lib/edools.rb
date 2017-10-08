@@ -13,6 +13,7 @@ require 'edools/student'
 require 'edools/invitation'
 require 'edools/enrollment'
 require 'edools/session'
+require 'edools/media'
 
 module Edools
   class << self

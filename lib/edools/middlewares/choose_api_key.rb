@@ -13,10 +13,8 @@ module  Edools
         path = url.to_s.split('/')
         if path.last == 'wizard'
           Edools.config.api_key
-        elsif path.last == 'sign_in' and path[-2] == 'users'
-          Edools.config.session_key
         else
-          Edools.config.admin_key
+          Edools.config.admin_key || Edools.config.session_key
         end
       end
     end
