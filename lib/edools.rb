@@ -11,10 +11,12 @@ require 'edools/school'
 require 'edools/course'
 require 'edools/school_product'
 require 'edools/student'
+require 'edools/collaborator'
 require 'edools/invitation'
 require 'edools/enrollment'
 require 'edools/session'
 require 'edools/media'
+require 'edools/operation'
 
 module Edools
   class << self
